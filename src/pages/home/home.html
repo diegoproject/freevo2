@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Freevo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-lines>
+  <ion-item>
+    <ion-thumbnail item-start>
+      <img src="assets/imgs/logo.png">
+    </ion-thumbnail>
+    <h2>My Neighbor Totoro</h2>
+    <p>Hayao Miyazaki • 1988</p>
+    <button ion-button clear item-end (click) = "openPushPage()">mais info</button>
+  </ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-item-sliding *ngFor="let contact of contacts | async">
+    <ion-item>
+      <h1>{{ contact.name }}</h1>
+      <p>{{ contact.tel }}</p>
+    </ion-item>
+
+    <ion-item-options side="left">
+      <button ion-button color="secundary" (click)="editContact(contact)">
+        <ion-icon name="create"></ion-icon>
+      </button>
+      <button ion-button color="danger" (click)="removeContact(contact.key)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item-options>
+
+
+  </ion-item-sliding>
+</ion-list>
+
+
+  <ion-fab bottom right>
+    <button ion-fab color="primary" (click)="newContact()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

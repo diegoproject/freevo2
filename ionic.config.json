@@ -1,0 +1,7 @@
+{
+  "name": "freevo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
